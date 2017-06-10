@@ -1,2 +1,2 @@
 # ng-phone
-Using AngularJS and 
+Using AngularJS to show the information of the latest phones in the market. 
