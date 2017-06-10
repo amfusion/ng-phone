@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1" />
+
+    <title>AngularJS PhoneList</title>
+
+
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/angular-material.css" />
+</head>
+
+<body ng-app="ngPhoneApp" layout="column" ng-controller="ngPhoneCtrl as ctrl">
+
+    <md-toolbar layout="row">
+        <h3>ngPhone Starter</h3>
+    </md-toolbar>
+
+    <div flex layout="row">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+            <md-list>
+                <md-list-item ng-repeat="brand in ctrl.brands">
+                    <md-button ng-click="ctrl.getPhoneLatest(brand.name)" ng-class="{'selected' : u === ul.selected }">
+                        <md-icon md-svg-icon="{{u.avatar}}" class="avatar"></md-icon>
+                        {{brand.name}}
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+            <md-list>
+                <md-list-item ng-repeat="phone in ctrl.phones">
+                    <p>{{phone.DeviceName}}</p>
+                    <p>{{phone.chipset}}</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+
+    <script src="components/angular.js"></script>
+    <script src="components/angular-animate.js"></script>
+    <script src="components/angular-aria.js"></script>
+    <script src="components/angular-resource.js"></script>
+    <script src="components/angular-material.js"></script>
+    <script src="js/phoneInfo.service.js"></script>
+    <script src="js/brand.service.js"></script>
+    <script src="js/ngPhone.module.js"></script>
+</body>
+
+</html>
